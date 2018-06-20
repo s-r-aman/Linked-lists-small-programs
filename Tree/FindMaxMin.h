@@ -1,14 +1,40 @@
+// int FindMin(BSTnode *root)
+// {
+//   if (root == NULL)
+//   {
+//     throw "Tree is empty!";
+//   }
+//   while (root->left != NULL)
+//   {
+//     root = root->left;
+//   }
+//   return root->data;
+// }
+
+// int FindMax(BSTnode *root)
+// {
+//   if (root == NULL)
+//   {
+//     throw "Tree is empty!";
+//   }
+//   while (root->right != NULL)
+//   {
+//     root = root->right;
+//   }
+//   return root->data;
+// }
+
 int FindMin(BSTnode *root)
 {
   if (root == NULL)
   {
     throw "Tree is empty!";
   }
-  while (root->left != NULL)
+  if (root->left == NULL)
   {
-    root = root->left;
+    return root->data;
   }
-  return root->data;
+  return FindMin(root->left);
 }
 
 int FindMax(BSTnode *root)
@@ -17,9 +43,9 @@ int FindMax(BSTnode *root)
   {
     throw "Tree is empty!";
   }
-  while (root->right != NULL)
+  if (root->right == NULL)
   {
-    root = root->right;
+    return root->data;
   }
-  return root->data;
+  return FindMax(root->right);
 }
