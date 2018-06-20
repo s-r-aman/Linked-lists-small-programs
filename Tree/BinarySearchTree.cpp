@@ -72,7 +72,9 @@ int main()
   try
   {
     int min = FindMin(root);
-    std::cout << min;
+    int max = FindMax(root);
+    std::cout << "Minimum: " << min << std::endl;
+    std::cout << "Maximum: " << max << std::endl;
   }
   catch (const std::exception &)
   {
