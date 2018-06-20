@@ -1,11 +1,11 @@
 #include <iostream>
-
 struct BSTnode
 {
   int data;
   BSTnode *left;
   BSTnode *right;
 };
+#include "./FindMaxMin.h"
 
 BSTnode *GetNewNode(int data)
 {
@@ -58,7 +58,7 @@ int main()
   root = InsertNode(root, 10);
   root = InsertNode(root, 20);
   root = InsertNode(root, 30);
-  root = InsertNode(root, 40);
+  root = InsertNode(root, 1);
   root = InsertNode(root, 50);
   root = InsertNode(root, 60);
   int number;
@@ -68,5 +68,14 @@ int main()
     std ::cout << "Found\n";
   else
     std ::cout << "Not Found\n";
+
+  try
+  {
+    int min = FindMin(root);
+    std::cout << min;
+  }
+  catch (const std::exception &)
+  {
+  }
   return 0;
 }
